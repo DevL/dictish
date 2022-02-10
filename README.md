@@ -69,19 +69,26 @@ https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 
 ## Truthiness
 
-By default, an object is considered true unless its class defines either a __bool__() method
-that returns False or a __len__() method that returns zero, when called with the object.
+> By default, an object is considered true unless its class defines either a `__bool__()` method
+> that returns `False` or a `__len__()` method that returns zero, when called with the object.
 
 
 ## Implementing merging by supporting +
 
-__add__`
+`__add__`
 
 ## Missing key handling
 
 https://docs.python.org/3/library/collections.html#defaultdict-objects
 
 `__missing__`
+
+## Implementing superset/subset check support
+
+- [ ] `d > other` (strict superset)
+- [ ] `d >= other` (superset)
+- [ ] `d < other` (strict subset)
+- [ ] `d <= other` (subset)
 
 
 ## Implementing missing 3.9 functionality
