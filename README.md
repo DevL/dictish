@@ -7,7 +7,7 @@ Lecture material for implementing a dict-like object in Python.
 ## Steps
 
 * `Creating`
-* `__bool__`
+* `__bool__` and `__len__`
 * `__getitem__`
 * `__iter__`
 * `get`

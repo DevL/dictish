@@ -13,3 +13,6 @@ class Dictish:
         https://docs.python.org/3/library/stdtypes.html#typeiter
         """
         return (key for key, value in self.keys_and_values)
+
+    def __len__(self):
+        return len(self.keys_and_values)

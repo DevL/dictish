@@ -9,11 +9,11 @@ class Dictish:
         """
         self.keys_and_values = args[0] if args else []
 
-    def __bool__(self):
-        return bool(self.keys_and_values)
-
     def __iter__(self):
         return self.keys()
+
+    def __len__(self):
+        return len(self.keys_and_values)
 
     def items(self):
         return iter(self.keys_and_values)

@@ -5,9 +5,6 @@ class Dictish:
         """
         self.keys_and_values = args[0] if args else []
 
-    def __bool__(self):
-        return bool(self.keys_and_values)
-
     def __getitem__(self, lookup_key):
         try:
             return next(value for key, value in self.keys_and_values if key == lookup_key)
@@ -16,6 +13,9 @@ class Dictish:
 
     def __iter__(self):
         return self.keys()
+
+    def __len__(self):
+        return len(self.keys_and_values)
 
     def items(self):
         return iter(self.keys_and_values)

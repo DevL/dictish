@@ -13,3 +13,6 @@ class Dictish:
         https://docs.python.org/3/library/stdtypes.html#typeiter
         """
         raise StopIteration
+
+    def __len__(self):
+        return 0
