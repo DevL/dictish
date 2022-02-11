@@ -14,4 +14,4 @@ def test_an_empty_dictish_is_falsey():
 
 
 def test_the_length_of_an_empty_dictish_is_zero():
-    assert len(Dictish()) is 0
+    assert len(Dictish()) == 0

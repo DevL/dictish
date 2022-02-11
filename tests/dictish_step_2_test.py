@@ -16,4 +16,4 @@ def test_a_populated_dictish_is_truthy():
 
 
 def test_the_length_of_a_populated_dictish():
-    assert len(Dictish([("a", 1), ("b", 2), ("c", 3)])) is 3
+    assert len(Dictish([("a", 1), ("b", 2), ("c", 3)])) == 3
