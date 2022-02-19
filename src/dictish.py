@@ -18,11 +18,17 @@ class Dictish:
     def __add__(self, key_and_value):
         return self | self.__class__([key_and_value])
 
+    def __bool(self):
+        """
+        Redundant as __len__ is defined.
+        """
+        return bool(self.keys_and_values)
+
     def __contains__(self, key):
         """
-        Supports the "in" keyword.
+        Supports the "in" keyword. Redundant as __iter__ is defined.
         """
-        raise NotImplementedError
+        return key in self.keys()
 
     def __eq__(self, other):
         """
