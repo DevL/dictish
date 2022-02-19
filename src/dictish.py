@@ -26,7 +26,7 @@ class Dictish:
 
     def __getitem__(self, lookup_key):
         try:
-            return next(value for key, value in self.keys_and_values if key == lookup_key)
+            return next(value for key, value in self.items() if key == lookup_key)
         except StopIteration:
             raise KeyError(lookup_key)
 
@@ -51,6 +51,10 @@ class Dictish:
     def __repr__(self):
         keys_and_values = self.keys_and_values if self.keys_and_values else ""
         return f"{self.__class__.__name__}({keys_and_values})"
+
+    def __str__(self):
+        pairs = (f"'{key}': {value}" for key, value in self.items())
+        return "{" + ", ".join(pairs) + "}"
 
     def get(self, key, default=None):
         try:
