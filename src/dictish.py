@@ -18,6 +18,12 @@ class Dictish:
     def __add__(self, key_and_value):
         return self | self.__class__([key_and_value])
 
+    def __contains__(self, key):
+        """
+        Supports the "in" keyword.
+        """
+        raise NotImplementedError
+
     def __eq__(self, other):
         """
         Two dictish are equal if they contain the same key-value pairs, regardless of order.
@@ -35,6 +41,12 @@ class Dictish:
 
     def __len__(self):
         return len(self.keys_and_values)
+
+    def __missing__(self, key):
+        """
+        Behave like a defaultdict.
+        """
+        raise NotImplementedError
 
     def __or__(self, other):
         keys = list(self.keys())
