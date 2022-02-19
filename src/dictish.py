@@ -3,7 +3,23 @@ class Dictish:
         """
         Example: Dictish([("first", 1), ("second", 2)])
         """
-        self.keys_and_values = args[0] if args else []
+        keys = []
+        values = []
+        if args:
+            for key, value in args[0]:
+                if key in keys:
+                    index = keys.index(key)
+                    values[index] = value
+                else:
+                    keys.append(key)
+                    values.append(value)
+        self.keys_and_values = list(zip(keys, values))
+
+    def __eq__(self, other):
+        """
+        Two dictish are equal if they contain the same key-value pairs, regardless of order.
+        """
+        return all((key_and_value in self.items() for key_and_value in other.items()))
 
     def __getitem__(self, lookup_key):
         try:
@@ -16,6 +32,10 @@ class Dictish:
 
     def __len__(self):
         return len(self.keys_and_values)
+
+    def __repr__(self):
+        keys_and_values = self.keys_and_values if self.keys_and_values else ""
+        return f"{self.__class__.__name__}({keys_and_values})"
 
     def get(self, key, default=None):
         try:
