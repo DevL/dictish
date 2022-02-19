@@ -15,6 +15,9 @@ class Dictish:
                     values.append(value)
         self.keys_and_values = list(zip(keys, values))
 
+    def __add__(self, key_and_value):
+        return self | self.__class__([key_and_value])
+
     def __eq__(self, other):
         """
         Two dictish are equal if they contain the same key-value pairs, regardless of order.
