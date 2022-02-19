@@ -33,6 +33,18 @@ class Dictish:
     def __len__(self):
         return len(self.keys_and_values)
 
+    def __or__(self, other):
+        keys = list(self.keys())
+        values = list(self.values())
+        for key, value in other.items():
+            if key in keys:
+                index = keys.index(key)
+                values[index] = value
+            else:
+                keys.append(key)
+                values.append(value)
+        return Dictish(zip(keys, values))
+
     def __repr__(self):
         keys_and_values = self.keys_and_values if self.keys_and_values else ""
         return f"{self.__class__.__name__}({keys_and_values})"

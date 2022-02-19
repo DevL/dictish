@@ -111,6 +111,8 @@ https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects
 
 https://docs.python.org/3/library/collections.abc.html#collections-abstract-base-classes
 
+## Disposition
+
 1. Creating an empty Dictish
     1. Truth
     2.
