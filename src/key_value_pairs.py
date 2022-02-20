@@ -1,0 +1,2 @@
+class KeyValuePairs:
+    pass

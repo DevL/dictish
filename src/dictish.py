@@ -3,17 +3,10 @@ class Dictish:
         """
         Example: Dictish([("first", 1), ("second", 2)])
         """
-        keys = []
-        values = []
         if args:
-            for key, value in args[0]:
-                if key in keys:
-                    index = keys.index(key)
-                    values[index] = value
-                else:
-                    keys.append(key)
-                    values.append(value)
-        self.keys_and_values = list(zip(keys, values))
+            self.keys_and_values = list(_deduplicate(args[0], [], []))
+        else:
+            self.keys_and_values = []
 
     def __add__(self, key_and_value):
         return self | self.__class__([key_and_value])
@@ -40,7 +33,7 @@ class Dictish:
         try:
             return next(value for key, value in self.items() if key == lookup_key)
         except StopIteration:
-            raise KeyError(lookup_key)
+            return self.__missing__(lookup_key)
 
     def __iter__(self):
         return self.keys()
@@ -52,19 +45,20 @@ class Dictish:
         """
         Behave like a defaultdict.
         """
-        raise NotImplementedError
+        raise KeyError(key)
 
     def __or__(self, other):
-        keys = list(self.keys())
-        values = list(self.values())
-        for key, value in other.items():
-            if key in keys:
-                index = keys.index(key)
-                values[index] = value
-            else:
-                keys.append(key)
-                values.append(value)
-        return Dictish(zip(keys, values))
+        return self.__class__(_deduplicate(other.items(), list(self.keys()), list(self.values())))
+        # keys = list(self.keys())
+        # values = list(self.values())
+        # for key, value in other.items():
+        #     if key in keys:
+        #         index = keys.index(key)
+        #         values[index] = value
+        #     else:
+        #         keys.append(key)
+        #         values.append(value)
+        # return Dictish(zip(keys, values))
 
     def __repr__(self):
         keys_and_values = self.keys_and_values if self.keys_and_values else ""
@@ -88,3 +82,14 @@ class Dictish:
 
     def values(self):
         return (value for key, value in self.keys_and_values)
+
+
+def _deduplicate(keys_and_values, keys, values):
+    for key, value in keys_and_values:
+        if key in keys:
+            index = keys.index(key)
+            values[index] = value
+        else:
+            keys.append(key)
+            values.append(value)
+    return zip(keys, values)
