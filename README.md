@@ -24,7 +24,7 @@ https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 `>>> sorted(dir(dict()))
 
 - [ ] `__class__`
-- [x] `__contains__`
+- [ ] `__contains__`
 - [ ] `__delattr__`
 - [ ] `__delitem__`
 - [ ] `__dir__`
@@ -47,7 +47,7 @@ https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 - [ ] `__reduce__`
 - [ ] `__reduce_ex__`
 - [x] `__repr__`
-- [x] `__reversed__`
+- [ ] `__reversed__`
 - [ ] `__setattr__`
 - [ ] `__setitem__`
 - [ ] `__sizeof__`
@@ -72,10 +72,11 @@ https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 > By default, an object is considered true unless its class defines either a `__bool__()` method
 > that returns `False` or a `__len__()` method that returns zero, when called with the object.
 
+- [x] Implement `__len__`
 
 ## Implementing merging by supporting +
 
-`__add__`
+- [x] `__add__`
 
 ## Missing key handling
 
@@ -85,22 +86,18 @@ https://docs.python.org/3/library/collections.html#defaultdict-objects
 
 ## Implementing superset/subset check support
 
-- [ ] `d > other` (strict superset)
-- [ ] `d >= other` (superset)
-- [ ] `d < other` (strict subset)
-- [ ] `d <= other` (subset)
+- [x] `d > other` (strict superset) = `__gt__`
+- [x] `d >= other` (superset) = `__ge__`
+- [x] `d < other` (strict subset) = `__lt__`
+- [x] `d <= other` (subset) = `__le__`
 
+See `functools.total_ordering`
 
 ## Implementing missing 3.9 functionality
 
-
-d | other
+- [x] `d | other`
 
     Create a new dictionary with the merged keys and values of d and other, which must both be dictionaries. The values of other take priority when d and other share keys.
-
-d |= other
-
-    Update the dictionary d with keys and values from other, which may be either a mapping or an iterable of key/value pairs. The values of other take priority when d and other share keys.
 
 ## View Objects and simplifications
 

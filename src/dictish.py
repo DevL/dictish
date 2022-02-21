@@ -32,6 +32,12 @@ class Dictish:
         """
         return all((key_and_value in self.items() for key_and_value in other.items()))
 
+    def __ge__(self, other):
+        return set(self.items()) >= set(other.items())
+
+    def __gt__(self, other):
+        return set(self.items()) > set(other.items())
+
     def __getitem__(self, lookup_key):
         """
         >>> Dictish([("a", 1), ("b", 2)])["a"]
@@ -51,12 +57,18 @@ class Dictish:
         """
         return self.keys()
 
+    def __le__(self, other):
+        return set(self.items()) <= set(other.items())
+
     def __len__(self):
         """
         >>> len(Dictish([("key", "value")]))
         1
         """
         return len(self.keys_and_values)
+
+    def __lt__(self, other):
+        return set(self.items()) < set(other.items())
 
     def __or__(self, other):
         """
