@@ -107,13 +107,3 @@ https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects
 ## Using an Abstract Base Class
 
 https://docs.python.org/3/library/collections.abc.html#collections-abstract-base-classes
-
-## Disposition
-
-1. Creating an empty Dictish
-    1. Truth
-    2.
-2.
-3.
-4.
-5.
