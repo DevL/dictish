@@ -1,6 +1,5 @@
 from dictish import Dictish
 
-
 AN_EMPTY_DICTISH = Dictish()
 LETTER_TO_NUMBER = Dictish([("a", 1), ("b", 2), ("c", 3)])
 

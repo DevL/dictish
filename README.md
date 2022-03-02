@@ -99,6 +99,11 @@ See `functools.total_ordering`
 
     Create a new dictionary with the merged keys and values of d and other, which must both be dictionaries. The values of other take priority when d and other share keys.
 
+
+## Callable
+
+- [x] `__call__` behaves like `get` to mimic Clojure's hashmaps.
+
 ## View Objects and simplifications
 
 https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects

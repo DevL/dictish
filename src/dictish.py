@@ -23,6 +23,19 @@ class Dictish:
         """
         return self | self.__class__([key_and_value])
 
+    def __call__(self, key, default=None):
+        """
+        >>> Dictish([("a", 1), ("b", 2)])("a")
+        1
+
+        >>> Dictish([("a", 1), ("b", 2)])("c") is None
+        True
+
+        >>> Dictish([("a", 1), ("b", 2)])("c", 3)
+        3
+        """
+        return self.get(key, default)
+
     def __eq__(self, other):
         """
         Two Dictish are equal if they contain the same key-value pairs, regardless of order.
