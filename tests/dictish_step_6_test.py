@@ -1,7 +1,7 @@
 from dictish_step_6 import Dictish
 
 
-def test_empty_dictish_are_equal():
+def test_two_empty_dictish_are_equal():
     assert Dictish() == Dictish()
 
 
@@ -21,6 +21,6 @@ def test_two_dictish_with_same_key_value_pairs_in_different_order_are_equal():
 
 def test_two_dictish_with_different_key_value_pairs_are_not_equal():
     a_dictish = Dictish([("a", 1), ("b", 2)])
-    another_dictish = Dictish([("a", 1), ("b", 2), ("c", 3)])
+    another_dictish = Dictish([("a", 1), ("b", 3)])
 
     assert a_dictish != another_dictish

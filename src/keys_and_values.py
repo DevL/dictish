@@ -8,6 +8,7 @@ class KeysAndValues(UserList):
             self.data = list(deduplicate(sequence))
         else:
             self.data = []
+        # self.data = list(deduplicate(sequence)) if sequence else []
         # self.data = list(deduplicate(sequence)) if sequence or []
         # self.data = list(deduplicate(sequence or []))
 
@@ -19,11 +20,11 @@ def deduplicate(sequence, keys=None, values=None):
     append = partial(_append, keys, values)
 
     for key, value in sequence:
-        # if key in keys:
-        #     update(key, value)
-        # else:
-        #     append(key, value)
-        update(key, value) if key in keys else append(key, value)
+        if key in keys:
+            update(key, value)
+        else:
+            append(key, value)
+        # update(key, value) if key in keys else append(key, value)
 
     return zip(keys, values)
 

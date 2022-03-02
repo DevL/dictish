@@ -1,7 +1,5 @@
 from dictish_step_2 import Dictish
 
-# from dictish_step_2a import Dictish
-
 
 def test_a_dictish_can_be_created_using_a_list_of_tuples():
     Dictish([("a", 1), ("b", 2), ("c", 3)])
