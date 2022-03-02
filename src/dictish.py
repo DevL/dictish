@@ -46,9 +46,15 @@ class Dictish:
         return all((key_and_value in self.items() for key_and_value in other.items()))
 
     def __ge__(self, other):
+        """
+        Tests whether this dictish is a superset of another object responding to items.
+        """
         return set(self.items()) >= set(other.items())
 
     def __gt__(self, other):
+        """
+        Tests whether this dictish is a strict superset of another object responding to items.
+        """
         return set(self.items()) > set(other.items())
 
     def __getitem__(self, lookup_key):
@@ -71,6 +77,9 @@ class Dictish:
         return self.keys()
 
     def __le__(self, other):
+        """
+        Tests whether this dictish is a subset of another object responding to items.
+        """
         return set(self.items()) <= set(other.items())
 
     def __len__(self):
@@ -81,6 +90,9 @@ class Dictish:
         return len(self.keys_and_values)
 
     def __lt__(self, other):
+        """
+        Tests whether this dictish is a strict subset of another object responding to items.
+        """
         return set(self.items()) < set(other.items())
 
     def __or__(self, other):
