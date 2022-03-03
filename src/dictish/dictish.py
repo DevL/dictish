@@ -42,8 +42,16 @@ class Dictish:
 
         >>> Dictish([("a", 1), ("b", 2)]) == Dictish([("b", 2), ("a", 1)])
         True
+
+        >>> Dictish([("a", 1)]) == Dictish([("b", 2), ("a", 1)])
+        False
+
+        >>> Dictish([("a", 1), ("b", 2)]) == Dictish([("b", 2)])
+        False
         """
-        return all((key_and_value in self.items() for key_and_value in other.items()))
+        return len(self) == len(other) and all(
+            (key_and_value in self.items() for key_and_value in other.items())
+        )
 
     def __ge__(self, other):
         """
