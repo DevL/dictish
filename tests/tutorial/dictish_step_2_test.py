@@ -1,4 +1,4 @@
-from dictish_step_2 import Dictish
+from tutorial.dictish_step_2 import Dictish
 
 
 def test_a_dictish_can_be_created_using_a_list_of_tuples():

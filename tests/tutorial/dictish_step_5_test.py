@@ -1,4 +1,4 @@
-from dictish_step_5 import Dictish
+from tutorial.dictish_step_5 import Dictish
 
 DICTISH = Dictish([("a", 1), ("b", 2), ("c", 3)])
 

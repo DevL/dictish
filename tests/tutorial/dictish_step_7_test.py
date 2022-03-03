@@ -1,4 +1,4 @@
-from dictish_step_7 import Dictish
+from tutorial.dictish_step_7 import Dictish
 
 
 def test_creating_a_dictish_deduplicates_the_input():

@@ -1,5 +1,5 @@
-from dictish_step_7 import Dictish as BrokenDictish
-from dictish_step_7a import Dictish
+from tutorial.dictish_step_7 import Dictish as BrokenDictish
+from tutorial.dictish_step_7a import Dictish
 
 
 def test_deduplicating_the_entire_input_is_not_enough():

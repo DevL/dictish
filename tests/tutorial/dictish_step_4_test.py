@@ -1,5 +1,5 @@
 import pytest
-from dictish_step_4 import Dictish
+from tutorial.dictish_step_4 import Dictish
 
 DICTISH = Dictish([("a", 1), ("b", 2), ("c", 3)])
 

@@ -1,4 +1,4 @@
-from dictish_step_6 import Dictish
+from tutorial.dictish_step_6 import Dictish
 
 
 def test_two_empty_dictish_are_equal():
