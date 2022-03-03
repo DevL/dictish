@@ -1,5 +1,5 @@
-from dictish_key_iterator import DictishKeyIterator
-from dictish_value_iterator import DictishValueIterator
+from .dictish_key_iterator import DictishKeyIterator
+from .dictish_value_iterator import DictishValueIterator
 
 
 class Dictish:
