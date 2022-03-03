@@ -21,5 +21,29 @@ class Dictish:
         """
         return all((key_and_value in self.items() for key_and_value in other.items()))
 
+    def __getitem__(self, lookup_key):
+        try:
+            return next(value for key, value in self.keys_and_values if key == lookup_key)
+        except StopIteration:
+            raise KeyError(lookup_key)
+
+    def __iter__(self):
+        return self.keys()
+
+    def __len__(self):
+        return len(self.keys_and_values)
+
+    def get(self, key, default=None):
+        try:
+            return self[key]
+        except KeyError:
+            return default
+
     def items(self):
         return iter(self.keys_and_values)
+
+    def keys(self):
+        return (key for key, value in self.keys_and_values)
+
+    def values(self):
+        return (value for key, value in self.keys_and_values)
