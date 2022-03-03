@@ -1,4 +1,4 @@
-from keys_and_values import KeysAndValues, deduplicate
+from dictish.keys_and_values import KeysAndValues, deduplicate
 
 
 def test_creating_an_empty_key_value_pair_list():

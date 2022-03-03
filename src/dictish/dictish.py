@@ -1,4 +1,4 @@
-from keys_and_values import KeysAndValues, deduplicate
+from .keys_and_values import KeysAndValues, deduplicate
 
 
 class Dictish:
