@@ -75,7 +75,7 @@ https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 
 - [x] Implement `__len__`
 
-## Implementing merging by supporting +
+## Implementing appending by supporting +
 
 - [x] `__add__`
 
