@@ -65,7 +65,7 @@ class Dictish:
         try:
             return next(value for key, value in self.items() if key == lookup_key)
         except StopIteration:
-            raise KeyError
+            raise KeyError(lookup_key)
 
     def __iter__(self):
         """
