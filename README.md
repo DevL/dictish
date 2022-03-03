@@ -21,27 +21,28 @@ Lecture material for implementing a dict-like object in Python.
 
 https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 
-`>>> sorted(dir(dict()))
+`>>> sorted(dir(dict())) # and some more`
 
-- [ ] `__class__`
-- [ ] `__contains__`
+- [x] `__bool__`
+- [x] `__class__`
+- [x] `__contains__`
 - [ ] `__delattr__`
 - [ ] `__delitem__`
 - [ ] `__dir__`
 - [ ] `__doc__`
 - [x] `__eq__`
 - [ ] `__format__`
-- [ ] `__ge__`
+- [x] `__ge__`
 - [ ] `__getattribute__`
 - [x] `__getitem__`
-- [ ] `__gt__`
+- [x] `__gt__`
 - [ ] `__hash__`
 - [x] `__init__`
 - [ ] `__init_subclass__`
 - [x] `__iter__`
-- [ ] `__le__`
+- [x] `__le__`
 - [x] `__len__`
-- [ ] `__lt__`
+- [x] `__lt__`
 - [ ] `__ne__`
 - [ ] `__new__`
 - [ ] `__reduce__`
